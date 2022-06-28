@@ -33,4 +33,34 @@ let fetchBtn = document.getElementById("fetchBtn");
 
 fetchBtn.addEventListener("click", fetchData);
 
+let postDataBtn = document.getElementById("postDataBtn");
+
+postDataBtn.addEventListener("click", postData);
+
+let data = {
+  title: "Brown eggs",
+  type: "dairy",
+  description: "Raw organic brown eggs in a basket",
+  filename: "0.jpg",
+  height: 600,
+  width: 400,
+  price: 28.1,
+  rating: 4
+}
+
+function postData() {
+
+  axios.post(url, data)
+    .catch(
+      (error) => {
+
+        //when to do when the request is not successfull
+        console.log(error);
+        windows.alert("Data was posted in the JSON file")
+
+      }
+
+    )
+
+}
 
