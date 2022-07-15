@@ -51,12 +51,21 @@ let data = {
 function postData() {
 
   axios.post(url, data)
-    .catch(
+    .then(
+
+      (receivedJson) => {
+
+        //what to do when the request is successfull
+        console.log(receivedJson);
+
+      }
+
+    ).catch(
+
       (error) => {
 
         //when to do when the request is not successfull
         console.log(error);
-        windows.alert("Data was posted in the JSON file")
 
       }
 
